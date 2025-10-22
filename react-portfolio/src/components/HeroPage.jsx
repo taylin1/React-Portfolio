@@ -1,6 +1,7 @@
  
 import React from "react";
 import PortfolioWeb from "../images/PortfolioWeb.png"
+import AboutMeWeb from "../images/AboutMeWeb.jpg"
 
 function HeroPage() {
   return (
@@ -28,8 +29,8 @@ function HeroPage() {
               src={PortfolioWeb}
               className="img-fluid border rounded-3 shadow-lg mb-4"
               alt="Example screenshot"
-              width="700"
-              height="300"
+              width="500"
+              height="400"
               loading="lazy"
             />
           </div>
@@ -48,7 +49,7 @@ function HeroPage() {
                         </div>
                     </div>
                     <div className="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-                        <img className="rounded-lg-3" src="bootstrap-docs.png" alt="" width="720"/>
+                        <img className="rounded-lg-3" src={AboutMeWeb} alt="" width="850" height="800"/>
                     </div>
                 </div>
             </div>
