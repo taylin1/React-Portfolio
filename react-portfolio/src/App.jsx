@@ -2,6 +2,7 @@ import './App.css'
 import './index.css'; 
 import NavBar from './components/NavBar.jsx'
 import HeroPage from './components/HeroPage.jsx'
+import ProjectsPage from './components/ProjectPage.jsx';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <>
       <NavBar/>
       <HeroPage/>
+      <ProjectsPage/>
     </>
   )
 }

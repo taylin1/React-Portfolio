@@ -31,7 +31,7 @@ function HeroPage() {
           View My Work
         </a>
       </section>
-
+    <hr></hr>
      <div className="flex flex-col md:flex-row justify-center items-start md:gap-32 bg-gray-100 py-16 px-6">
   {/* About Me Section */}
   <div className="max-w-xl mb-10 md:mb-0">
@@ -57,7 +57,7 @@ function HeroPage() {
         <li>Javascript</li>
       </ul>
     </div>
-
+     
     {/* Soft Skills */}
     <div>
       <h2 className="text-3xl font-bold text-indigo-800 mb-4 text-center"><span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Soft Skills</span></h2>
@@ -69,7 +69,7 @@ function HeroPage() {
     </div>
   </div>
 </div>
-
+ 
     </>
   );
 }
