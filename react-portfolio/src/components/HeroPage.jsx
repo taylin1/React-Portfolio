@@ -7,7 +7,7 @@ function HeroPage() {
     <>
       <section
         id="home"
-        className="h-screen flex flex-col justify-center items-center bg-gray-100">
+        className="h-screen flex flex-col justify-center items-center">
           
         <h1 className="text-5xl font-bold text-gray-800">
           Building Ideas One Code At A Time{" "}
@@ -31,8 +31,8 @@ function HeroPage() {
           View My Work
         </a>
       </section>
-    <hr></hr>
-     <div className="flex flex-col md:flex-row justify-center items-start md:gap-32 bg-gray-100 py-16 px-6">
+    
+     <div id="about" className="flex flex-col md:flex-row justify-center items-start md:gap-32 py-16 px-6 bg-gray-200">
   {/* About Me Section */}
   <div className="max-w-xl mb-10 md:mb-0">
     <h2 className="text-3xl font-bold text-indigo-800 mb-4"><span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">About Me</span></h2>

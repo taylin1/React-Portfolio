@@ -17,6 +17,19 @@ const projects = [
     image: ProjectPic,
     
   },
+  {
+    title: "Quiz Website",
+    image: ProjectPic,
+  },
+
+  {
+    title: "Food Website",
+    image: ProjectPic,
+  },
+  {
+    title: "Front End Calculator",
+    image: ProjectPic,
+  },
 ];
 
 function ProjectsPage (){
