@@ -34,7 +34,7 @@ function HeroPage() {
     
      <div id="about" className="flex flex-col md:flex-row justify-center items-start md:gap-32 py-16 px-6 bg-gray-200">
   {/* About Me Section */}
-  <div className="max-w-xl mb-10 md:mb-0">
+  <div className="w-xl mb-10 md:mb-0">
     <h2 className="text-3xl font-bold text-indigo-800 mb-4"><span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">About Me</span></h2>
     <p className="text-gray-800 leading-relaxed">
       I’m a self-driven creative who’s deeply interested in technology,
