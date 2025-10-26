@@ -5,30 +5,35 @@ const projects = [
   {
     title: "Portfolio Website",
     image: ProjectPic,
+    link:"",
    
   },
   {
     title: "Digital Clock App",
     image: ProjectPic,
+    link:"https://lighthearted-gnome-6e12fd.netlify.app/",
     
   },
   {
     title: "Diamond Tech Website",
     image: ProjectPic,
-    
+    link:"https://silly-sherbet-a92e15.netlify.app/",
   },
   {
     title: "Quiz Website",
     image: ProjectPic,
+    link:"https://rococo-gnome-fc6e46.netlify.app/",
   },
 
   {
     title: "Food Website",
     image: ProjectPic,
+    link:"https://classy-unicorn-c438ec.netlify.app/",
   },
   {
     title: "Front End Calculator",
     image: ProjectPic,
+    link:"https://sensational-gumdrop-64bef4.netlify.app/",
   },
 ];
 
@@ -42,7 +47,7 @@ function ProjectsPage (){
             <img src={project.image} alt={project.title} className="w-full h-48 object-cover"/>
             <div className="p-4">
               <h3 className="text-xl font-semibold py-2">{project.title}</h3>
-              <a href="" className="bg-indigo-600 text-white rounded-lg px-1 py-1 ">
+              <a href={project.link} className="bg-indigo-600 text-white rounded-lg px-1 py-1 " target="_blank">
               Go to project
               </a>
             </div>
