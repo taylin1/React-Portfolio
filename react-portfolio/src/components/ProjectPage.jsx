@@ -5,7 +5,7 @@ const projects = [
   {
     title: "Portfolio Website",
     image: ProjectPic,
-    link:"",
+    link:"https://eclectic-boba-20376a.netlify.app/",
    
   },
   {
@@ -43,7 +43,7 @@ function ProjectsPage (){
       <h2 className="text-4xl font-bold text-indigo-600 mb-10">Projects</h2>
       <div className="grid md:grid-cols-3 gap-8 w-6xl mx-auto px-4">
         {projects.map((project, index) => (
-          <div key={index} className="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition">
+          <div key={index} className="bg-gray-200 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition">
             <img src={project.image} alt={project.title} className="w-full h-48 object-cover"/>
             <div className="p-4">
               <h3 className="text-xl font-semibold py-2">{project.title}</h3>
