@@ -42,6 +42,7 @@ function ProjectsPage (){
     <section id="projects" className="py-20 bg-white text-center">
       <h2 className="text-4xl font-bold text-indigo-600 mb-10">Projects</h2>
       <div className="grid md:grid-cols-3 gap-8 w-6xl mx-auto px-4">
+        {/*This creates a new array that cycles through original array*/}
         {projects.map((project, index) => (
           <div key={index} className="bg-gray-200 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition">
             <img src={project.image} alt={project.title} className="w-full h-48 object-cover"/>
