@@ -1,6 +1,6 @@
 import React from "react";
-import PortfolioWeb from "../images/PortfolioWeb.png";
-import AboutMeWeb from "../images/AboutMeWeb.jpg";
+import PortfolioWeb from "../assets/PortfolioWeb.png";
+import AboutMeWeb from "../assets/AboutMeWeb.jpg";
 
 function HeroPage() {
   return (
