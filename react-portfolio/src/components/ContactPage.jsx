@@ -4,7 +4,7 @@ function ContactPage(){
     return(
 <>
 
-{<section id="contact" className="py-20 bg-gray-200 ">
+<section id="contact" className="py-20 bg-gray-200 ">
 <h2 className="text-4xl font-bold text-indigo-600 mb-5 text-center">Contact Me:</h2>
     <form className="flex flex-col max-w-md mx-auto gap-4">
         <label className="font-bold text-lg text-indigo-500">Name:</label>
@@ -13,7 +13,9 @@ function ContactPage(){
         <input type="username" placeholder="Email" className="border border-black-300 rounded-lg p-3" required></input>
         <label className="p-3 font-bold text-lg text-indigo-500">Message:</label>
         <textarea placeholder="Message" className="border-3 border-blue-900 p-3 rounded-lg" required></textarea>
+        <button type="submit" className="p-2 bg-indigo-600 text-white rounded-lg">Submit</button>
     </form>
+   
     <div className="mt-8 text-gray-700">
         <p className="text-indigo-600 font-bold text-center text-lg">or connect with me:</p>
         <div className="flex justify-center gap-6 mt-3">
@@ -25,7 +27,7 @@ function ContactPage(){
             <a href="https://www.linkedin.com/in/taylin-damonze-298629234/" target="_blank" className="hover:text-indigo-600 font-bold">LinkedIn</a>
         </div>
       </div>
-</section>}
+</section>
 </>
     )
 }
