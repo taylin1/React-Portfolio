@@ -7,17 +7,17 @@ function HeroPage() {
     <>
       <section
         id="home"
-        className="h-screen flex flex-col justify-center items-center">
+        className="h-screen text-center flex flex-col justify-center items-center">
           
-        <h1 className="text-5xl font-bold text-gray-800">
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-800">
           Building Ideas One Code At A Time{" "}
         </h1>
         <h2 className="text-2xl mt-3 text-gray-700">
           Web Developer & Designer.
         </h2>
         <p className="mt-4 text-gray-600 max-w-lg text-center"></p>
-        <img src={PortfolioWeb} alt="image" width="300" height="300"></img>
-        <p className="text-2xl font-bold text-gray-700 py-5">
+        <img src={PortfolioWeb} alt="image" className="w-48 md:w-72 lg:w-80"></img>
+        <p className="text-lg md:text-2xl font-bold text-gray-700 py-5">
           Creating digital experiences that feel both{" "}
           <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             {" "}
@@ -34,7 +34,7 @@ function HeroPage() {
     
      <div id="about" className="flex flex-col md:flex-row justify-center items-start md:gap-32 py-16 px-6 bg-gray-200">
   {/* About Me Section */}
-  <div className="w-xl mb-10 md:mb-0">
+  <div className="w-full md:max-w-xl mb-10 md:mb-0">
     <h2 className="text-3xl font-bold text-indigo-800 mb-4"><span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">About Me</span></h2>
     <p className="text-gray-800 leading-relaxed">
       I’m a self-driven creative who’s deeply interested in technology,
