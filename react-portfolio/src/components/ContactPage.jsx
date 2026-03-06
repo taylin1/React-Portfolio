@@ -4,7 +4,7 @@ function ContactPage(){
     return(
 <>
 
-<section id="contact" className="py-20 bg-gray-200 ">
+<section id="contact" className="py-20 bg-gray-200 px-5">
 <h2 className="text-4xl font-bold text-indigo-600 mb-5 text-center">Contact Me:</h2>
     <form className="flex flex-col max-w-md mx-auto gap-4">
         <label className="font-bold text-lg text-indigo-500">Name:</label>

@@ -7,7 +7,7 @@ function Footer(){
      return(
      <>
         <footer className="bg-gray-600 p-2 ">
-            <p className="font-bold text-white text-md">@{d.getFullYear()}  Taylin.</p>
+            <p className="font-bold text-white text-md">@{d.getFullYear()}  Taylin. This website is front-end only</p>
         </footer>
     </>
     )

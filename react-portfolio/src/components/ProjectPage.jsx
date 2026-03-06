@@ -41,7 +41,7 @@ function ProjectsPage (){
   return (
     <section id="projects" className="py-20 bg-white text-center">
       <h2 className="text-4xl font-bold text-indigo-600 mb-10">Projects</h2>
-      <div className="grid w-full md:grid-cols-3 gap-8 w-6xl mx-auto px-4">
+      <div className="grid grid-cols-2 gap-4 w-full md:grid-cols-3 gap-8 w-6xl mx-auto px-4">
 
         {/*This creates a new array that cycles through original array*/}
 
