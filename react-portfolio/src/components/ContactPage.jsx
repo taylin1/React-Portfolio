@@ -5,7 +5,16 @@ function ContactPage() {
     <section id="contact" className="py-12 bg-gray-50">
       <div className="max-w-2xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-indigo-700 text-center mb-8">Contact Me</h2>
-        <form className="flex flex-col gap-4">
+        <form
+        className="flex flex-col gap-4"
+        action="https://formsubmit.co/tdamonze0@gmail.com"
+        method="POST"
+        target="_blank"
+      >
+        <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="#contact" />
           <div>
             <label className="block font-semibold text-indigo-600 mb-1">Name</label>
             <input
@@ -39,6 +48,9 @@ function ContactPage() {
           >
             Send Message
           </button>
+          <p className="text-xs text-gray-500 -mt-2">
+            Click to send. First submission activates the email.
+          </p>
         </form>
 
         <div className="mt-8 md:mt-10 text-gray-700 text-center">
