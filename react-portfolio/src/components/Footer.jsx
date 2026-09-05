@@ -6,8 +6,12 @@ function Footer(){
     
      return(
      <>
-        <footer className="bg-gray-600 p-2 ">
-            <p className="font-bold text-white text-md">@{d.getFullYear()}  Taylin. This website is front-end only</p>
+        <footer className="bg-gray-800 py-6">
+            <div className="max-w-6xl mx-auto px-4 text-center">
+              <p className="text-gray-300 text-sm">
+                @{d.getFullYear()} Taylin. This website is front-end only.
+              </p>
+            </div>
         </footer>
     </>
     )
