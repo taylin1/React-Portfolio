@@ -13,11 +13,10 @@ function ContactPage() {
       >
         <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_next" value="#contact" />
           <div>
             <label className="block font-semibold text-indigo-600 mb-1">Name</label>
             <input
+              name="name"
               type="text"
               placeholder="Your name"
               className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -27,6 +26,7 @@ function ContactPage() {
           <div>
             <label className="block font-semibold text-indigo-600 mb-1">Email</label>
             <input
+              name="email"
               type="email"
               placeholder="your@email.com"
               className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -36,6 +36,7 @@ function ContactPage() {
           <div>
             <label className="block font-semibold text-indigo-600 mb-1">Message</label>
             <textarea
+              name="message"
               placeholder="Your message..."
               rows={4}
               className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
