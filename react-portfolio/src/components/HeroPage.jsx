@@ -85,7 +85,7 @@ function HeroPage() {
             )
           )}
           {/* Duplicate for seamless scroll */}
-          {["React", "Node.js", "JavaScript", "TypeScript", "TailwindCSS", "HTML5", "CSS3", "Express", "MongoDB", "REST APIs"].map(
+          {["React", "Node.js", "JavaScript", "TypeScript", "TailwindCSS", "HTML5", "CSS3", "Express", "REST APIs"].map(
             (tech) => (
               <span
                 key={`dup-${tech}`}
