@@ -54,7 +54,7 @@ function HeroPage() {
       {/* Quick Stats Bar */}
       <section className="bg-white border-b border-gray-200 py-8">
         <div className="max-w-4xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="flex justify-center align-items-center gap-20">
             <div className="p-3">
               <p className="text-3xl font-bold text-indigo-700">10+</p>
               <p className="text-sm text-gray-600">Projects Completed</p>
@@ -74,7 +74,7 @@ function HeroPage() {
       {/* Tech Stack Marquee */}
       <section className="bg-indigo-600 py-6 overflow-hidden">
         <div className="flex flex-nowrap gap-8 animate-scroll marquee">
-          {["React", "Node.js", "JavaScript", "TypeScript", "TailwindCSS", "HTML5", "CSS3", "Express", "MongoDB", "REST APIs"].map(
+          {["React", "Node.js", "JavaScript", "TypeScript", "TailwindCSS", "HTML5", "CSS3", "Express", "Supabase", "REST APIs"].map(
             (tech) => (
               <span
                 key={tech}
