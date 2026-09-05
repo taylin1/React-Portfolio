@@ -3,9 +3,9 @@ import ProjectPic from "../assets/ProjectPic.jpeg"
 
 const projects = [
   {
-    title: "Portfolio Website",
+    title: "Url-Shortener ",
     image: ProjectPic,
-    link:"https://eclectic-boba-20376a.netlify.app/",
+    link:"https://url-shortener-five-tan.vercel.app",
    
   },
   {
@@ -15,9 +15,9 @@ const projects = [
     
   },
   {
-    title: "Diamond Tech Website",
+    title: "Notes App",
     image: ProjectPic,
-    link:"https://silly-sherbet-a92e15.netlify.app/",
+    link:"https://notes-fh5dakc7k-taylin1s-projects.vercel.app",
   },
   {
     title: "Quiz Website",
@@ -26,9 +26,9 @@ const projects = [
   },
 
   {
-    title: "Food Website",
+    title: "System Reservation",
     image: ProjectPic,
-    link:"https://classy-unicorn-c438ec.netlify.app/",
+    link:"https://reservation-system-orcin.vercel.app/",
   },
   {
     title: "Front End Calculator",
