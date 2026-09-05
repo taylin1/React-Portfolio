@@ -4,7 +4,7 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-900 text-white fixed w-full top-0 shadow-md z-50 h-16">
+    <nav className="bg-gray-900 text-white fixed w-full top-0 shadow-md z-50 h-20">
       <div className="max-w-6xl mx-auto px-4 flex justify-between items-center h-full">
         <a href="#home" className="text-xl md:text-2xl font-bold text-indigo-400">
           My Portfolio
