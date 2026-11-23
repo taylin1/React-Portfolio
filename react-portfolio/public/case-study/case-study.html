@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study: Qhakaza Art Collective — 3-Platform Web Ecosystem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --card-border: #1f293d;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;
+      --accent-glow: rgba(59, 130, 246, 0.15);
+      --accent-emerald: #10b981;
+      --accent-purple: #8b5cf6;
+      --code-bg: #0d111a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.65;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Back link */
+    .top-nav {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .back-btn:hover {
+      color: var(--accent);
+    }
+
+    .badge-internship {
+      background: rgba(59, 130, 246, 0.12);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 0.3rem 0.8rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 3.5rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 30%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 780px;
+      margin-bottom: 1.5rem;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .meta-item .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .meta-item .value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-purple));
+    }
+
+    .stat-num {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      font-weight: 500;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 3.5rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #ffffff;
+    }
+
+    h2 .section-num {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      font-size: 1rem;
+      font-weight: 600;
+      background: var(--accent-glow);
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+    }
+
+    p {
+      color: #d1d5db;
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+    }
+
+    /* Web Apps Card Grid */
+    .app-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .app-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .app-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(59, 130, 246, 0.5);
+    }
+
+    .app-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+    }
+
+    .app-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .app-badge {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .badge-public { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+    .badge-private { background: rgba(139, 92, 246, 0.15); color: #a78bfa; }
+    .badge-admin { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+
+    .app-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .app-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-top: auto;
+    }
+    .app-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Architecture Visual Diagram */
+    .arch-container {
+      background: var(--code-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      margin: 1.75rem 0;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .diagram-layer {
+      display: flex;
+      justify-content: space-around;
+      gap: 1rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .diagram-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 0.85rem;
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .diagram-box.highlight {
+      border-color: var(--accent);
+      background: rgba(59, 130, 246, 0.05);
+    }
+
+    .diagram-box.db {
+      border-color: var(--accent-emerald);
+      background: rgba(16, 185, 129, 0.05);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .diagram-arrow {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+
+    /* Feature Grid */
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .feature-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .feature-item h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Code Block / Security snippet */
+    .code-preview {
+      background: var(--code-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: #e5e7eb;
+      overflow-x: auto;
+      margin-top: 0.75rem;
+    }
+
+    /* Tech Stack Pills */
+    .pill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1.25rem 0;
+    }
+
+    .pill {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #e5e7eb;
+      padding: 0.4rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Callout */
+    .callout {
+      background: rgba(59, 130, 246, 0.08);
+      border-left: 4px solid var(--accent);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+    }
+    .callout p {
+      margin-bottom: 0;
+      font-size: 1rem;
+      color: #bfdbfe;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding-top: 2rem;
+      margin-top: 4rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 1.5rem 1rem; }
+      h1 { font-size: 2rem; }
+      .feature-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="top-nav">
+      <a href="https://react-portfolio-jtao.vercel.app" class="back-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to Portfolio
+      </a>
+      <span class="badge-internship">Featured Case Study</span>
+    </div>
+
+    <header>
+      <h1>Qhakaza Art Collective — Multi-Platform Web Ecosystem</h1>
+      <p class="subtitle">
+        Co-engineering an interconnected 3-application monorepo (38 pages) powered by a shared Supabase PostgreSQL backend, 200+ database Row-Level Security (RLS) rules, and cryptographic invitation pipelines.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <div class="label">My Role</div>
+          <div class="value">AI & Software Development Intern</div>
+        </div>
+        <div class="meta-item">
+          <div class="label">Company / Client</div>
+          <div class="value">Melsoft Pty Ltd / Qhakaza Art</div>
+        </div>
+        <div class="meta-item">
+          <div class="label">Timeline</div>
+          <div class="value">June 2026 – September 2026</div>
+        </div>
+        <div class="meta-item">
+          <div class="label">Deployment</div>
+          <div class="value">Vercel & Supabase Cloud</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Key Metrics Section -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Websites in Monorepo</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">38</div>
+        <div class="stat-label">Production Pages Built</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">208</div>
+        <div class="stat-label">Database RLS Security Rules</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">510</div>
+        <div class="stat-label">Automated Tests Authored</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">17/17</div>
+        <div class="stat-label">Production Deliverables Done</div>
+      </div>
+    </div>
+
+    <!-- 01: Project Overview & The Problem -->
+    <section>
+      <h2><span class="section-num">01</span> The Challenge & Context</h2>
+      <p>
+        Qhakaza Art Collective required a modern digital platform to handle three distinct, sensitive user workflows:
+      </p>
+      <ul style="margin-left: 1.5rem; margin-bottom: 1.25rem; color: #d1d5db;">
+        <li><strong>Artists:</strong> Needed an intuitive dashboard to upload high-resolution artwork, manage submissions, and receive curatorial review questions without seeing other artists' works or collector data.</li>
+        <li><strong>High-Net-Worth Collectors:</strong> Needed a private, invitation-only showcase to browse curated work, review artist intelligence dossiers, and submit private enquiries.</li>
+        <li><strong>Curators & Administrators:</strong> Needed an internal "Command Center" to run multi-stage artwork vetting, manage team access, issue tokenized member invites, and review immutable audit logs.</li>
+      </ul>
+      <div class="callout">
+        <p><strong>The Core Engineering Challenge:</strong> A single monolithic website would create severe risks of data leakage between collectors and artists. The architecture needed to physically isolate the three audiences at the DNS/domain level while synchronizing state across a single, unified database.</p>
+      </div>
+    </section>
+
+    <!-- 02: The 3-Platform Ecosystem -->
+    <section>
+      <h2><span class="section-num">02</span> The 3-Platform Ecosystem</h2>
+      <p>
+        Rather than building one generic site with role-toggled navigation, the team architected three specialized web applications deployed independently on Vercel:
+      </p>
+
+      <div class="app-cards">
+        <div class="app-card">
+          <div>
+            <div class="app-card-header">
+              <span class="app-title">1. Vera Platform</span>
+              <span class="app-badge badge-public">Artist & Public</span>
+            </div>
+            <p class="app-desc">
+              Artist workspace for uploading artwork with client-side progress bars and previews. Submissions enter a strict status machine (`Draft` → `Review` → `Question` → `Approved`). Houses the public browse showcase.
+            </p>
+          </div>
+          <a href="https://qhakaza-art-vera.vercel.app" target="_blank" rel="noopener" class="app-link">
+            Visit Vera Platform &rarr;
+          </a>
+        </div>
+
+        <div class="app-card">
+          <div>
+            <div class="app-card-header">
+              <span class="app-title">2. Collector Portal</span>
+              <span class="app-badge badge-private">Private Members</span>
+            </div>
+            <p class="app-desc">
+              Exclusive collector environment accessed strictly via tokenized 14-day expiring invite links. Provides private discovery, enquiry pipelines, and embedded artist dossiers.
+            </p>
+          </div>
+          <a href="https://qhakaza-art-collector-iota.vercel.app" target="_blank" rel="noopener" class="app-link">
+            Visit Collector Portal &rarr;
+          </a>
+        </div>
+
+        <div class="app-card">
+          <div>
+            <div class="app-card-header">
+              <span class="app-title">3. Command Center</span>
+              <span class="app-badge badge-admin">Team / Internal</span>
+            </div>
+            <p class="app-desc">
+              Internal staff dashboard for Admin, Advisor, and Analyst tiers. Handles artist onboarding, artwork curation round-trips, invitation generation, and live immutable audit trails.
+            </p>
+          </div>
+          <a href="https://qhakaza-art-command-center.vercel.app" target="_blank" rel="noopener" class="app-link">
+            Visit Command Center &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03: System Architecture & Database Security -->
+    <section>
+      <h2><span class="section-num">03</span> Architecture & Database-Level Security</h2>
+      <p>
+        Security in this ecosystem is not handled merely by hiding UI buttons. Instead, we implemented <strong>208 Row-Level Security (RLS) rules</strong> in PostgreSQL to guarantee authorization is enforced directly at the data layer.
+      </p>
+
+      <div class="arch-container">
+        <div style="color: #60a5fa; font-weight: 600; margin-bottom: 0.5rem; text-align: center;">[ FRONTEND LAYER — VERCEL DEPLOYMENTS ]</div>
+        <div class="diagram-layer">
+          <div class="diagram-box highlight">Vera (Artists & Public)</div>
+          <div class="diagram-box highlight">Collector Portal (Members)</div>
+          <div class="diagram-box highlight">Command Center (Staff)</div>
+        </div>
+        <div class="diagram-arrow">&darr; &uarr; (Authenticated API / Supabase Client)</div>
+        <div style="color: #34d399; font-weight: 600; margin-bottom: 0.5rem; text-align: center;">[ BACKEND & DATA LAYER — SUPABASE POSTGRESQL ]</div>
+        <div class="diagram-box db">
+          <strong>Shared PostgreSQL Database</strong><br>
+          <span style="color: #9ca3af; font-size: 0.78rem;">208 RLS Policies &bull; Role-Based Access (Admin / Advisor / Analyst) &bull; Immutable Audit Logs</span>
+        </div>
+      </div>
+
+      <div class="callout" style="border-left-color: var(--accent-emerald); background: rgba(16, 185, 129, 0.08);">
+        <p style="color: #a7f3d0;"><strong>Real-World Security Example:</strong> The platform defines three staff tiers: <em>Admin</em>, <em>Advisor</em>, and <em>Analyst</em>. Analysts are responsible for artwork research dossiers but are legally barred from seeing collector financial records. Rather than simply hiding the financial UI tab, the PostgreSQL RLS policy returns exactly <code>0 rows</code> if an Analyst user attempts to query the collector table directly.</p>
+      </div>
+    </section>
+
+    <!-- 04: My Key Technical Contributions -->
+    <section>
+      <h2><span class="section-num">04</span> Key Engineering Contributions</h2>
+      <p>
+        As part of the Melsoft development team, my responsibilities spanned frontend implementation, backend schema integration, and end-to-end security pipelines:
+      </p>
+
+      <div class="feature-list">
+        <div class="feature-item">
+          <h3>
+            <svg width="20" height="20" fill="none" stroke="#60a5fa" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            Cryptographic Invitation Pipeline
+          </h3>
+          <p>
+            Engineered secure member invite links. When staff generate an invitation, a unique cryptographically random token is generated with an automatic 14-day expiry.
+          </p>
+          <p>
+            The plaintext URL is displayed once to the administrator, while only a SHA-256 hashed fingerprint is persisted in the database. Staff can instantly revoke or reissue tokens if lost.
+          </p>
+        </div>
+
+        <div class="feature-item">
+          <h3>
+            <svg width="20" height="20" fill="none" stroke="#34d399" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            Private Media Uploads with Signed URLs
+          </h3>
+          <p>
+            Constructed direct media upload pipelines for artists submitting high-resolution artwork images, including client-side progress bars and previews.
+          </p>
+          <p>
+            Assets are saved into private cloud storage buckets and accessed exclusively through time-limited private signed URLs, preventing unvetted art or hotlinking leaks.
+          </p>
+        </div>
+
+        <div class="feature-item">
+          <h3>
+            <svg width="20" height="20" fill="none" stroke="#fbbf24" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            Multi-Stage Artwork Approval State Machine
+          </h3>
+          <p>
+            Implemented the end-to-end vetting roundtrip: an artist submits work &rarr; staff review in Command Center &rarr; curators can return the submission with specific feedback.
+          </p>
+          <p>
+            Artists receive the exact curator feedback in their portal and can revise and resubmit. Artwork can only be published to the public browse gallery once explicitly approved by an Admin.
+          </p>
+        </div>
+
+        <div class="feature-item">
+          <h3>
+            <svg width="20" height="20" fill="none" stroke="#a78bfa" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
+            AI-Assisted Delivery &amp; Automated Testing
+          </h3>
+          <p>
+            Leveraged AI-assisted development workflows to accelerate feature scaffolding, validate complex PostgreSQL RLS policies against edge cases, and author over <strong>510 automated tests</strong>.
+          </p>
+          <p>
+            This significantly reduced development cycles and ensured zero regression across 38 interconnected pages before final client handover.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05: Tech Stack -->
+    <section>
+      <h2><span class="section-num">05</span> Technologies Used</h2>
+      <div class="pill-cloud">
+        <span class="pill">React</span>
+        <span class="pill">Next.js / Vite</span>
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">Supabase</span>
+        <span class="pill">Row-Level Security (RLS)</span>
+        <span class="pill">Role-Based Access Control (RBAC)</span>
+        <span class="pill">Vercel</span>
+        <span class="pill">RESTful APIs</span>
+        <span class="pill">Tailwind CSS</span>
+        <span class="pill">Automated Testing (510+ Tests)</span>
+        <span class="pill">Signed URLs & Storage</span>
+        <span class="pill">AI-Assisted Workflows</span>
+      </div>
+    </section>
+
+    <!-- 06: Handover & Results -->
+    <section>
+      <h2><span class="section-num">06</span> Outcomes & Handover</h2>
+      <p>
+        On August 17, 2026, the development team officially handed over the complete ecosystem to Qhakaza Art Collective with <strong>100% (17/17) agreed roadmap milestones delivered</strong>:
+      </p>
+      <ul style="margin-left: 1.5rem; color: #d1d5db; line-height: 1.8;">
+        <li>&check; Single source of truth: Successfully migrated to Qhakaza's dedicated cloud database.</li>
+        <li>&check; Complete isolation of artist, collector, and administration flows across 38 live pages.</li>
+        <li>&check; Comprehensive audit logging: All staff actions, status updates, and vetting notes are immutably preserved.</li>
+        <li>&check; Robust test coverage with 510 automated tests safeguarding all critical authentication and vetting flows.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Taylin Charl Damonze &bull; Junior Software Developer</p>
+      <p style="margin-top: 0.5rem;">
+        <a href="https://react-portfolio-jtao.vercel.app" style="color: var(--accent); text-decoration: none;">View Portfolio</a> &bull;
+        <a href="https://github.com/taylin1" style="color: var(--accent); text-decoration: none; margin-left: 0.5rem;">GitHub</a> &bull;
+        <a href="https://linkedin.com/in/taylin-damonze-298629234" style="color: var(--accent); text-decoration: none; margin-left: 0.5rem;">LinkedIn</a>
+      </p>
+    </footer>
+  </div>
+
+</body>
+</html>

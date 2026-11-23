@@ -62,6 +62,26 @@ function ProjectsPage (){
           </div>
         ))}
       </div>
+
+  <div className="project-card mt-10">
+  <h3 className="text-xl md:text-2xl font-bold text-indigo-700 text-center mb-8">Qhakaza Art Collective — Multi-Platform Web Ecosystem</h3>
+  <p className="font-bold ">
+    Co-engineered 3 interconnected web applications (38 pages) with a shared 
+    Supabase PostgreSQL backend, 200+ database RLS security rules, and tokenized invitations.
+  </p>
+
+  <div className="project-links">
+    {/* Direct link to case study */}
+    <a 
+      href="/public/case-study/case-study.html" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="btn-case-study bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-bold"
+    >
+      View Full Case Study →
+    </a>
+  </div>
+</div>
       </div>
     </section>
   );
