@@ -73,7 +73,7 @@ function ProjectsPage (){
   <div className="project-links">
     {/* Direct link to case study */}
     <a 
-      href="/public/case-study/case-study.html" 
+      href="/case-study/case-study.html" 
       target="_blank" 
       rel="noopener noreferrer"
       className="btn-case-study bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-bold"
